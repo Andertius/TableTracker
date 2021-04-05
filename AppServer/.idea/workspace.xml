@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bece9757-cace-4209-9af7-9b4836dc0ac1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DBMapping/DBMapping.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBMapping/src/Connection/PGSQLCon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBMapping/src/DBClasses/Chain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBMapping/src/DBClasses/Place.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBMapping/src/DBClasses/PlaceScheme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBMapping/src/DBClasses/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DBMapping/src/DBClasses/UserContacts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Domain.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/src/ModelCRUDInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/MultiThreadFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AppServer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBMapping/DBMapping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DBMapping/DBMapping.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,11 +95,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/postgresql-42.2.19.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/netty-4.1.63.Final" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -150,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617363598999</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Hand written ORM base">
+      <created>1617536205810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617536205811</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +177,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project base with db conn." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project base with db conn." />
+    <MESSAGE value="Hand written ORM base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hand written ORM base" />
   </component>
 </project>

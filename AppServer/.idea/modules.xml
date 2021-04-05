@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AppServer.iml" filepath="$PROJECT_DIR$/AppServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/DBMapping/DBMapping.iml" filepath="$PROJECT_DIR$/DBMapping/DBMapping.iml" />
       <module fileurl="file://$PROJECT_DIR$/Domain/Domain.iml" filepath="$PROJECT_DIR$/Domain/Domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server/Server.iml" filepath="$PROJECT_DIR$/Server/Server.iml" />
     </modules>
   </component>
 </project>
