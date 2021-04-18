@@ -6,7 +6,7 @@ namespace AppServerC
     {
         static void Main(string[] args)
         {
-            Listener listener = new Listener();
+            Listener listener = new();
             listener.Listen();
         }
     }

@@ -52,8 +52,6 @@ namespace AppServerC
             Stream output = response.OutputStream;
             //output.Write(page, 0, page.Length);
             output.Close();
-        }
-       
+        }       
     }
 }
-

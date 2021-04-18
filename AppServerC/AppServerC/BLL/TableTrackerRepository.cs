@@ -1,11 +1,11 @@
-﻿using AppServerC.BLL;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+
+using AppServerC.BLL;
 
 namespace AppServerC.BLL
 {
@@ -19,15 +19,15 @@ namespace AppServerC.BLL
 
             using var context = new postgresContext();
 
-            var User = new User();
-            User.Email = email;
-            User.Username = username;
-            User.Password = password;
-            User.Salt = hashResultSha256.Salt;
+            var user = new User();
+            user.Email = email;
+            user.Username = username;
+            user.Password = password;
+            user.Salt = hashResultSha256.Salt;
 
             //напиши щось за валідацію, що маю зробити
 
-            context.Add(User);
+            context.Add(user);
 
         }
 
