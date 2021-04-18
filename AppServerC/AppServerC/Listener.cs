@@ -18,10 +18,8 @@ namespace AppServerC
         public Listener()
         {
             listener = new HttpListener();
-            listener.Prefixes.Add("http://localhost:8888/Main/");
-            listener.Prefixes.Add("http://localhost:8888/Reg/");
-            listener.Prefixes.Add("http://localhost:8888/Login/");
-            listener.Prefixes.Add("http://localhost:8888/LoginAction/");
+            listener.Prefixes.Add("http://localhost:8888/User/Login/");
+            listener.Prefixes.Add("http://localhost:8888/User/Registr/");
             listener.Prefixes.Add("http://localhost:8888/History/");
             listener.Prefixes.Add("http://localhost:8888/OCR/");
             listener.Prefixes.Add("http://localhost:8888/DoOCR/");
@@ -50,24 +48,12 @@ namespace AppServerC
             //router.URI = request.Url;
             //byte[] page = router.Respond(content);
             //response.ContentLength64 = page.Length;
-            response.ContentType = "text/HTML";
+            response.ContentType = "Json";
             Stream output = response.OutputStream;
             //output.Write(page, 0, page.Length);
             output.Close();
         }
-        //static public void CreateUser(string information)
-        //{
-        //    var inf = information.Split('&');
-        //    var usern = inf[0].Split('=');
-        //    var pass = inf[1].Split('=');
-        //    //WebAppContext db = new WebAppContext();
-        //    //User user = new User { Username = usern[1], Password = pass[1], Email = "gagugagu@gmail.com" };
-        //    db.User.Add(user);
-        //    db.SaveChanges();
-        //    response_string = new StringBuilder();
-        //    string responce = "User Added!";
-        //    response_string.Insert(0, responce);
-        //}
+       
     }
 }
 
