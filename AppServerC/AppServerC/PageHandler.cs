@@ -6,31 +6,45 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 
+using AppServerC;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using AppServerC.BLL;
+
 namespace Web_ptoj
 {
     public class PageHandler
     {
         //private WebAppContext db = new WebAppContext();
-        // private Balancer balancer;
-        public Uri URI { get; set; }
+        //private Balancer balancer;
+        private readonly PostgresContext _context;
+        private readonly UserManager _userManager;
 
-        public PageHandler()
+        public PageHandler(PostgresContext context, UserManager userManager)
         {
             //balancer = new Balancer();
+            _context = context;
+            _userManager = userManager;
         }
 
-        public PageHandler(Uri uri)
+        public PageHandler(Uri uri, PostgresContext context)
         {
             URI = uri;
+            _context = context;
             //balancer = new Balancer();
         }
+
+        public Uri URI { get; set; }
 
         public byte[] Respond(string information)
         {
             return URI.ToString() switch
             {
                 "http://localhost:8888/Reg/" => GetResult(@"B:\Prog\C#\Web_ptoj\Web_ptoj\Pages\Reg.html"),
-                "http://localhost:8888/Login/" => GetResult(@"B:\Prog\C#\Web_ptoj\Web_ptoj\Pages\Login.html"),
+                "http://localhost:8888/Login/" => _userManager.Login(@"B:\Prog\C#\Web_ptoj\Web_ptoj\Pages\Login.html"),
                 "http://localhost:8888/History/" => GetResult(@"B:\Prog\C#\Web_ptoj\Web_ptoj\Pages\History.html"),
                 _ => GetResult(@"B:\Prog\C#\Web_ptoj\Web_ptoj\Pages\Error.html"),
             };

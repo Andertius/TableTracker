@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppServerC.BLL
 {
-    class RandomNumberGenerator
+    static class RandomNumberGenerator
     {
-        public string GenerateRandomCryptographicKey(int keyLength)
+        public static string GenerateRandomCryptographicKey(int keyLength)
         {
             return Convert.ToBase64String(GenerateRandomCryptographicBytes(keyLength));
         }
 
-        public byte[] GenerateRandomCryptographicBytes(int keyLength)
+        public static byte[] GenerateRandomCryptographicBytes(int keyLength)
         {
-            RNGCryptoServiceProvider rngCryptoServiceProvider = new RNGCryptoServiceProvider();
+            var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
             byte[] randomBytes = new byte[keyLength];
             rngCryptoServiceProvider.GetBytes(randomBytes);
             return randomBytes;

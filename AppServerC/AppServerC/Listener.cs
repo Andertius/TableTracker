@@ -15,6 +15,7 @@ namespace AppServerC
         static public StringBuilder response_string;
         //static public PageHandler router;
         //public static WebAppContext db = new WebAppContext();
+
         public Listener()
         {
             listener = new HttpListener();
@@ -27,15 +28,16 @@ namespace AppServerC
             //router = new PageHandler();
             Console.WriteLine("HTTP server is running!\nAwaiting for connection:");
         }
+
         public void Listen()
         {
             while (true)
             {
                 HttpListenerContext context = listener.GetContext();
                 new Thread(() => DoListen(context)).Start();
-
             }
         }
+
         static public void DoListen(HttpListenerContext context)
         {
             Console.WriteLine("Get connection");
@@ -43,8 +45,12 @@ namespace AppServerC
             HttpListenerResponse response = context.Response;
             Console.WriteLine(request.Url);
             var content = "";
+
             using (var reader = new StreamReader(request.InputStream))
+            {
                 content = reader.ReadToEnd();
+            }
+
             //router.URI = request.Url;
             //byte[] page = router.Respond(content);
             //response.ContentLength64 = page.Length;

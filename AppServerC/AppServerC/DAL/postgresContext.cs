@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace AppServerC
 {
-    public partial class postgresContext : DbContext
+    public partial class PostgresContext : DbContext
     {
-        public postgresContext()
+        public PostgresContext()
         {
         }
 
-        public postgresContext(DbContextOptions<postgresContext> options)
+        public PostgresContext(DbContextOptions<PostgresContext> options)
             : base(options)
         {
         }

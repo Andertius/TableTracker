@@ -15,9 +15,9 @@ namespace AppServerC.BLL
         public void Signup(string username, string email, string password)
         {
             PasswordWithHashSalter hash = new PasswordWithHashSalter();
-            HashWithSaltResult hashResultSha256 = hash.HashWithSalt(password, 64, SHA256.Create());
+            HashWithSaltResult hashResultSha256 = PasswordWithHashSalter.HashWithSalt(password, 64, SHA256.Create());
 
-            using var context = new postgresContext();
+            using var context = new PostgresContext();
 
             var user = new User();
             user.Email = email;
@@ -33,12 +33,12 @@ namespace AppServerC.BLL
 
         public string Login(string email, string password)
         {
-            using var context = new postgresContext();
+            using var context = new PostgresContext();
 
             var currentUser = context.Users.Where(x => x.Email == email).Single();
 
             PasswordWithHashSalter hash = new PasswordWithHashSalter();
-            HashWithSaltResult hashResultSha256 = hash.HashWithExcistedSalt(password, currentUser.Salt, SHA256.Create());
+            HashWithSaltResult hashResultSha256 = PasswordWithHashSalter.HashWithExcistedSalt(password, currentUser.Salt, SHA256.Create());
 
             if(currentUser.Password == hashResultSha256.Digest)
             {

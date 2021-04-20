@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AppServerC.BLL
 {
     class PasswordWithHashSalter
     {
-        public HashWithSaltResult HashWithSalt(string password, int saltLength, HashAlgorithm hashAlgo)
+        public static HashWithSaltResult HashWithSalt(string password, int saltLength, HashAlgorithm hashAlgo)
         {
-            RandomNumberGenerator rng = new RandomNumberGenerator();
-
-            byte[] saltBytes = rng.GenerateRandomCryptographicBytes(saltLength);
+            byte[] saltBytes = RandomNumberGenerator.GenerateRandomCryptographicBytes(saltLength);
             byte[] passwordAsBytes = Encoding.UTF8.GetBytes(password);
 
-            List<byte> passwordWithSaltBytes = new List<byte>();
+            List<byte> passwordWithSaltBytes = new();
             passwordWithSaltBytes.AddRange(passwordAsBytes);
             passwordWithSaltBytes.AddRange(saltBytes);
 
@@ -24,13 +20,11 @@ namespace AppServerC.BLL
             return new HashWithSaltResult(Convert.ToBase64String(saltBytes), Convert.ToBase64String(digestBytes));
         }
 
-        public HashWithSaltResult HashWithExcistedSalt(string password, string salt, HashAlgorithm hashAlgo)
+        public static HashWithSaltResult HashWithExcistedSalt(string password, string salt, HashAlgorithm hashAlgo)
         {
-            RandomNumberGenerator rng = new RandomNumberGenerator();
-
             byte[] saltBytes = Encoding.ASCII.GetBytes(salt); ;
             byte[] passwordAsBytes = Encoding.UTF8.GetBytes(password);
-            List<byte> passwordWithSaltBytes = new List<byte>();
+            List<byte> passwordWithSaltBytes = new();
 
             passwordWithSaltBytes.AddRange(passwordAsBytes);
             passwordWithSaltBytes.AddRange(saltBytes);
