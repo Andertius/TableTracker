@@ -1,5 +1,11 @@
 package com.example.table;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class User {
     int id;
     String username;
@@ -9,9 +15,26 @@ public class User {
     String salt;
     int roles;
 
-    public User(String json)
-    {
-        //treba rozparsyty vse
+    public String registration() throws JSONException {
+        JSONObject obj = new JSONObject();
+        obj.put("email", email);
+        obj.put("username", username);
+        obj.put("password", password);
+        obj.put("roles", roles);
+        try(FileWriter file = new FileWriter("J.json")) {
+            file.write(obj.toString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return obj.toString();
+    }
+
+    public String login() throws JSONException {
+        JSONObject obj = new JSONObject();
+        obj.put("email", email);
+        obj.put("password", password);
+        return obj.toString();
     }
 
 
